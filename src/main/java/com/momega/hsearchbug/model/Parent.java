@@ -44,7 +44,7 @@ public class Parent {
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JoinColumn(name = "PARENT_ID")
 	@IndexedEmbedded
-    private List<Child> attributes = new ArrayList<Child>();
+    private List<Child> children = new ArrayList<Child>();
 
 	public Long getId() {
 		return id;
@@ -63,11 +63,11 @@ public class Parent {
 	}
 
 	public List<Child> getAttributes() {
-		return attributes;
+		return children;
 	}
 
 	public void setAttributes(List<Child> attributes) {
-		this.attributes = attributes;
+		this.children = attributes;
 	}
 	
 	
